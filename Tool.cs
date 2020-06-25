@@ -45,23 +45,27 @@ namespace JosnReaderFramework
         }
         public static object setValue(string dat, Type t)
         {
-            if (t.Name == "String")
+            if (t == typeof(string))
             {
                 return dat;
             }
-            else if (t.Name == "Int32")
+            else if (t == typeof(int))
             {
                 return Convert.ToInt32(dat);
             }
-            else if (t.Name == "Double")
+            else if (t == typeof(double))
             {
                 return Convert.ToDouble(dat);
             }
-            else if (t.Name == "Single")
+            else if (t == typeof(DateTime))
             {
-                return Convert.ToDouble(dat);
+                return Convert.ToDateTime(dat);
             }
-            else throw new Exception("目前不支持除了string,int,float,double之外的其他类型");
+            else if(t==typeof(bool))
+            {
+                return Convert.ToBoolean(dat);
+            }
+            else throw new Exception("目前不支持除了string,int,DateTime,double之外的其他类型");
         }
     }
 }
