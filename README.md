@@ -1,12 +1,12 @@
 # MyJsonReader  
-JSON文件读取框架(自己写着玩的)  
+JSON文件解析器(自己写着玩的)  
 ## 使用方法：  
 1.创建一个与要读取json文件结构相同的类，其中类中字段的名称要与json文件里的名称保持一致  
 2.将该类继承自Json类，并创建一个该类的对象  
 3.调用对象中的loadFromFile方法即可自动将json文件中的数据填充进对象中  
 ## 注意事项：  
-1.自己创建的用于读取json文件的类中不能有属性(Property)只能有字段(Field)，即不能添加getter和setter(因为我懒，还没有写Property的读取代码)  
+1.自己创建的用于读取json文件的类中不能有属性(Property)只能有字段(Field)，即不能添加getter和setter(因为还没有写Property的读取代码)  
 ~~2.这个框架存在着很多的bug，并且没有做过读取含有二维数组的json文件的测试~~  
 2.已经做过了测试，但是读取复杂的数组的速度很慢  
-3.该框架只支持int32、string、double、bool、DateTime五种数据类型，因为我觉得支持这四种就够了。但是可以修改Tool.setValue方法里面的if else添加其他数据类型的支持。  
+3.该工具只支持int32、string、double、bool、DateTime五种数据类型，因为使用时可以通过Convert类进行数据类型的转化，所以个人觉得支持这四种就够了。并且也可以通过修改Tool.setValue方法里面的if else添加其他数据类型的支持。  
 4.该算法性能非常差，我后面自己做了一个Java版的JSON文件读取框架，时间复杂度比这个项目减少了大约一半。因为C#自带的序列化接口支持JSON文件的序列化读写，因此我自己写的框架并没有实际的用途，仅仅是为了学习C#反射和JSON语法。
